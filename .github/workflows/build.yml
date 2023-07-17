@@ -36,14 +36,8 @@ jobs:
     - name: Generating Makefiles
       shell: bash
       run: |
-        if [[ "${{ runner.os }}" == "Windows" ]] ; then
-          export enable_ccache=off
-        else
-          export enable_ccache=on
-        fi
-        cmake -S . -B build -G Ninja \
-          -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
-          -DLAF_BACKEND=skia
+        cmake -B build -G Ninja \
+          -DLAF_BACKEND=skia .
     - name: Compiling
       shell: bash
       run: |
