@@ -31,7 +31,7 @@ jobs:
     - name: Generating Makefiles
       shell: bash
       run: |
-        mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} -DCMAKE_IGNORE_PATH='C:/ProgramData/chocolatey/bin/;C:/Strawberry/c/bin/' -DLAF_BACKEND=skia -DSKIA_DIR=../deps/skia -DSKIA_LIBRARY_DIR=../deps/skia/out/Release-x64 -G Ninja ..
+        mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_IGNORE_PATH='C:/ProgramData/chocolatey/bin/;C:/Strawberry/c/bin/' -DLAF_BACKEND=skia -DSKIA_DIR=../deps/skia -DSKIA_LIBRARY_DIR=../deps/skia/out/Release-x64 -G Ninja ..
     - name: Compiling
       shell: bash
       run: |
